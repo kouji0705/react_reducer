@@ -1,12 +1,5 @@
 import React, { useReducer } from 'react';
-
-// 状態の型を定義
-type State = {
-  count: number;
-};
-
-// アクションの型を定義
-type Action = { type: 'increment' } | { type: 'decrement' };
+import { Action, State } from './type';
 
 // reducer関数を定義
 const reducer = (state: State, action: Action): State => {
@@ -27,8 +20,9 @@ const Counter: React.FC = () => {
   return (
     <div>
       Count: {state.count}
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+      <br />
+      <button onClick={() => dispatch({ type: 'increment' })}>+1</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-1</button>
     </div>
   );
 };
